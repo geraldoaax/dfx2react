@@ -1,25 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import DFXMapViewer from "./DFXMapViewer";
 
-function App() {
+const App = () => {
+  const dfxFile = "/path/to/your/dfx/file.dfx";
+  const coordinates = {
+    latitude: 51.5074, // Example latitude
+    longitude: -0.1278, // Example longitude
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1>DFX Map Viewer</h1>
+      <DFXMapViewer dfxFile={dfxFile} coordinates={coordinates} />
     </div>
   );
-}
+};
 
 export default App;
